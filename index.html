@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<title>KOLKO I KRZYZYK</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.min.css">
+		<script src="js/jquery-3.1.1.min.js"></script>
+		<script src="bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+		<script src="js/game.js"></script>
+		
+		<style>
+			.game-board{
+				margin: 0 auto;
+				width: 1px;
+			}
+			.game-board td{
+				min-width: 4em;
+				min-height: 4em;
+				width: 4em;
+				height: 4em;
+			}
+			.game-board td:hover{
+				background-color: rgb(184, 147, 26);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="jumbotron">
+				<h1>Kolko i krzyzyk</h1>
+				<h2 style="font-size:x-small; font-family:'Times New Roman', Times, serif">Gre wykonał Szymon Majtyka</h2>
+				<button onclick="Play()" type="button" class="btn btn-outline-success">Start</button>
+			</div>
+		</div>
+		<div class="container">
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title">
+						Liczba graczy: <span id="idNumPlayers" class="badge">?</span>
+						<span id="idFull" class="badge badge-warning"></span>
+						<span id="idUser" class="badge badge-primary"></span>
+					</h4>
+				</div>
+				<div id="idGamePanel" class="card-body" style="display: none;">
+					<table class="table table-bordered game-board" style="text-align: center;">
+						<tbody>
+							<tr>
+								<td class="align-middle" id="idCell0" data-cellindex="0"></td>
+								<td class="align-middle" id="idCell1" data-cellindex="1"></td>
+								<td class="align-middle" id="idCell2" data-cellindex="2"></td>
+							</tr>
+							<tr>
+								<td class="align-middle" id="idCell3" data-cellindex="3"></td>
+								<td class="align-middle" id="idCell4" data-cellindex="4"></td>
+								<td class="align-middle" id="idCell5" data-cellindex="5"></td>
+							</tr>
+							<tr>
+								<td class="align-middle" id="idCell6" data-cellindex="6"></td>
+								<td class="align-middle" id="idCell7" data-cellindex="7"></td>
+								<td class="align-middle" id="idCell8" data-cellindex="8"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div id="idFooter" class="card-footer" style="display: none;">Kolej:
+					<span id="idRoundUser" class="badge badge-primary">UserA</span>
+					<span id="idRoundEnemy" class="badge badge-warning">UserB</span>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="idModalWinner" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<h4 class="modal-title">Wynik:</h4>
+						<p id="idWinner"></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
